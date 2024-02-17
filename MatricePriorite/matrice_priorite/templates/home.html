@@ -1,0 +1,98 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>PAGE D'ACCUEIL</h2>
+<h3>GESTION DE PRIORITE DE VOS TÂCHES</h3>
+<p>Bon retour, {{ username }}!</p>
+<div class="quadrant-grid">
+    <div class="quadrant" id="quadrant1">
+        <h2>Quadrant 1 - à traiter en priorité</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Deadline</th>
+                    <th>%</th>
+                </tr>
+            </thead>
+            <tbody>
+                  {% for task in tasks %} 
+                    <tr>
+                        <td>{{ task.description }}</td>
+                        <td>{{ task.deadline }}</td>
+                        <td>{{ task.completion_percentage }}%</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="quadrant" id="quadrant2">
+        <h2>Quadrant 2 - à planifier</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Deadline</th>
+                    <th>%</th>
+                </tr>
+            </thead>
+            <tbody>
+                  <!-- {% for task in tasks %} 
+                    <tr>
+                        <td>{{ task.description }}</td>
+                        <td>{{ task.deadline }}</td>
+                        <td>{{ task.completion_percentage }}%</td>
+                    </tr>
+                {% endfor %} -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="quadrant" id="quadrant3">
+        <h2>Quadrant 3 - à déléguer</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Deadline</th>
+                    <th>%</th>
+                </tr>
+            </thead>
+            <tbody>
+                  <!-- {% for task in tasks %} 
+                    <tr>
+                        <td>{{ task.description }}</td>
+                        <td>{{ task.deadline }}</td>
+                        <td>{{ task.completion_percentage }}%</td>
+                    </tr>
+                {% endfor %} -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="quadrant" id="quadrant4">
+        <h2>Quadrant 4 - à abandonner</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Deadline</th>
+                    <th>%</th>
+                </tr>
+            </thead>
+            <tbody>
+                  <!-- {% for task in tasks %} 
+                    <tr>
+                        <td>{{ task.description }}</td>
+                        <td>{{ task.deadline }}</td>
+                        <td>{{ task.completion_percentage }}%</td>
+                    </tr>
+                {% endfor %} -->
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

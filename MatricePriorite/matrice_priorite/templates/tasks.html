@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}Liste des tâches{% endblock %}
+
+{% block content %}
+<h2>MATRICE DE PRIORITE</h2>
+<h3>LISTE DES TÂCHES</h3>
+<div>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.description }} - {{ task.deadline }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

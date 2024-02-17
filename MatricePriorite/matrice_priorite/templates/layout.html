@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body class="loggedin">
+		<nav class="navtop">
+			<div>
+				<h1>MATRICE DE PRIORITE</h1>
+                <a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
+				<!-- <div class="dropdown">
+					<a href="{{ url_for('tasks') }}"><i class="fas fa-folder"></i>Tâches</a>
+					 <div>
+						<a href="{{ url_for('create_task') }}">Créer une Tâche</a>
+						<a href="{{ url_for('read_tasks') }}">Liste des Tâches</a>
+						<a href="{{ url_for('update_task') }}">Mettre à jour une Tâche</a>
+						<a href="{{ url_for('delete_task') }}">Supprimer une Tâche</a>
+					</div> 
+				</div> -->
+				<a href="{{ url_for('tasks') }}"><i class="fas fa-folder"></i>Tâches</a>
+				<a href="{{ url_for('create_task') }}"><i class="fas fa-folder"></i>Créer une Tâche</a>
+				<a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+				<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+			</div>
+		</nav>
+		<div class="content">
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>

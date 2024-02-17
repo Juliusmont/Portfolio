@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}Read Tasks{% endblock %}
+
+{% block content %}
+<div class="read-tasks">
+    <h2>Tasks List</h2>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.description }} - {{ task.deadline }} - {{ task.completion_percentage }}%</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

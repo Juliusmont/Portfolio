@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %}Update Task{% endblock %}
+
+{% block content %}
+<div class="update-task">
+    <h2>Update Task</h2>
+    <form action="{{ url_for('update_task', task_id=task.id) }}" method="post" autocomplete="off">
+        <label for="completion_percentage">Completion Percentage:</label>
+        <input type="text" name="completion_percentage" value="{{ task.completion_percentage }}">
+        
+        <label for="status">Status:</label>
+        <input type="text" name="status" value="{{ task.status }}">
+        
+        <input type="submit" value="Update Task">
+    </form>
+    <div class="msg">{{ msg }}</div>
+</div>
+{% endblock %}

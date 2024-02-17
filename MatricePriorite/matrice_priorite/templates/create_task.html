@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}Create Task{% endblock %}
+
+{% block content %}
+<div class="tasks">
+    <h2>Create Task</h2>
+    <form action="{{ url_for('create_task') }}" method="post" autocomplete="off">
+        <label for="description">
+            <i class="fas fa-text"></i>
+        </label>
+        <input type="text" name="description" placeholder="Description" id="description" required>
+        <br />
+        <label for="duration">
+            <i class="fas fa-text"></i>
+        </label>
+        <input type="text" name="duration" placeholder="Durée (en jours)" id="duration" required>
+        <br />
+        <label for="importance">
+            <i class="fas fa-text"></i>
+        </label>
+        <input type="text" name="importance" placeholder="Importance (1-5)" id="importance" required>
+        <br />
+        <label for="urgency">
+            <i class="fas fa-text"></i>
+        </label>
+        <input type="text" name="urgency" placeholder="Urgence (1-5)" id="urgency" required>
+        <br />
+        <label for="deadline">
+            <i class="fas fa-text"></i>
+        </label>
+        <input type="text" name="deadline" placeholder="Deadline" id="deadline" required>
+        <br />
+        <label for="monetary_cost">
+            <i class="fas fa-text"></i>
+        </label>
+        <input type="text" name="monetary_cost" placeholder="Coût Monétaire de la tâche" id="monetary_cost" required>
+        
+        
+        <input type="submit" value="Enregistrer">
+    </form>
+    <div class="msg">{{ msg }}</div>
+</div>
+{% endblock %}
